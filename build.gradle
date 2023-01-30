@@ -140,8 +140,8 @@ publishing {
             artifact sourcesJar
             artifact javadocJar
             pom {
-                name = 'java-crypto'
-                description = 'a java sub-cryptography library'
+                name = 'solidity-compiler-gradle-plugin'
+                description = 'a gradle plugin for solidity smart contracts'
                 url = 'https://github.com/AlleriaWindrunner/solidity-compiler-gradle-plugin'
 
                 licenses {
