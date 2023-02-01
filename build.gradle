@@ -19,7 +19,7 @@ repositories {
     mavenCentral()
 }
 
-version = '1.0.0'
+version = '1.0.1'
 group = 'io.github.alleriawindrunner'
 
 ext {
@@ -154,7 +154,7 @@ publishing {
                     developer {
                         id = 'AlleriaWindrunner'
                         name = 'AlleriaWindrunner'
-                        email = 'eleven.hm@vip.163.com'
+                        email = 'eleven_hm@163.com'
                     }
                 }
                 scm {
