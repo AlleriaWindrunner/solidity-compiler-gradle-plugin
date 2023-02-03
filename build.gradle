@@ -2,10 +2,10 @@ plugins {
     id 'java'
     id 'maven'
     id 'signing'
-    id 'eclipse'
     id 'com.github.sherter.google-java-format' version '0.8'
     id 'org.ajoberstar.grgit' version '4.1.1'
     id 'maven-publish'
+    id 'com.gradle.plugin-publish' version '1.1.0'
 }
 archivesBaseName = 'solidity-compiler-gradle-plugin'
 
@@ -128,6 +128,24 @@ googleJavaFormat {
     include '**/*.java'
 }
 
+gradlePlugin {
+    plugins {
+        solcPlugin {
+            id = 'io.github.alleriawindrunner.solc-gradle-plugin'
+            implementationClass = 'io.github.alleriawindrunner.solc.plugin.SolcPlugin'
+            displayName = 'Plugin for compatibility compile solidity smart contracts'
+        }
+    }
+
+    pluginBundle {
+        description = 'A gradle plugin for solidity smart contracts'
+        website = 'https://github.com/AlleriaWindrunner/solidity-compiler-gradle-plugin'
+        vcsUrl = 'https://github.com/AlleriaWindrunner/solidity-compiler-gradle-plugin.git'
+        tags = ['solidity', 'compile']
+    }
+}
+
+
 publishing {
     publications {
         mavenJava(MavenPublication) {
@@ -164,6 +182,7 @@ publishing {
             }
         }
     }
+
     repositories {
         maven {
             def releasesRepoURL = "https://s01.oss.sonatype.org/service/local/staging/deploy/maven2"
